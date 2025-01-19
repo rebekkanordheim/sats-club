@@ -17,7 +17,7 @@ function Header() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/cluboverview">Club Overview</Link>
+            <Link to="/cluboverview">Club Overview</Link> {/* Link to ClubOverview */}
           </li>
         </ul>
       </nav>

@@ -19,17 +19,16 @@ const AllClubs = () => {
           throw new Error("Failed to fetch clubs");
         }
         const data = await response.json();
-        setClubs(data.clubs); // Store the clubs data in state
-        setLoading(false); // Set loading to false after data is fetched
+        setClubs(data.clubs);
+        setLoading(false);
       } catch (error) {
-        setError(error.message); // Set error if there is any
+        setError(error.message); 
         setLoading(false);
       }
     };
 
     fetchClubs();
-  }, []); // Empty array means this effect runs only once when the component mounts
-
+  }, []);
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -48,7 +47,6 @@ const AllClubs = () => {
             <p>
               {club.address.city}, {club.address.country}
             </p>
-            {/* Add more information as needed */}
           </li>
         ))}
       </ul>
