@@ -1,0 +1,121 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap");
+
+/* For Poppins font */
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400; /* Regular */
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700; /* Bold */
+}
+
+:root {
+  --main-text: #ffffff;
+  --main-background: #0e2133;
+  --secondary-text: #fa5333;
+}
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--main-background);
+  color: var(--main-text);
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  width: 100%;
+  min-width: 320px;
+  margin: 0;
+}
+
+/* Header */
+header {
+  background-color: var(--main-background);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-image {
+  height: 100px;
+  width: auto;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+li {
+  margin-right: 20px;
+}
+
+a {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  color: var(--main-text);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
