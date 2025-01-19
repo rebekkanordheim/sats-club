@@ -8,7 +8,6 @@ const AllClubs = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-
   useEffect(() => {
     const fetchClubs = async () => {
       try {
@@ -22,7 +21,7 @@ const AllClubs = () => {
         setClubs(data.clubs);
         setLoading(false);
       } catch (error) {
-        setError(error.message); 
+        setError(error.message);
         setLoading(false);
       }
     };
