@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Layout/Home";
 import Header from "./Layout/Header";
+import AllClubs from "./Clubs/allClubs";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
+      <AllClubs />
     </Router>
   );
 }
