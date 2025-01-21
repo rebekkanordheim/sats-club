@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 const API_BASE_URL = "/clubs-v2/sats";
 const CLUBS_ENDPOINT = `${API_BASE_URL}/clubs?country=Norway`;
 
-const AllClubs = ({ backgroundColor }) => {
-  // Accept backgroundColor prop
+const AllClubs = () => {
   const [clubs, setClubs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -31,11 +29,7 @@ const AllClubs = ({ backgroundColor }) => {
   }, []);
 
   if (loading) {
-    return (
-      <div className="loading" style={{ backgroundColor }}>
-        Loading...
-      </div>
-    ); // Apply backgroundColor dynamically
+    return <div className="loading">Loading...</div>;
   }
 
   if (error) {
