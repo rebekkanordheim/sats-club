@@ -1,40 +1,41 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for routing
+import { useNavigate } from "react-router-dom";
 
 const API_BASE_URL = "/clubs-v2/sats";
 const CLUBS_ENDPOINT = `${API_BASE_URL}/clubs?country=Norway`;
 
-const AllClubs = () => {
+const AllClubs = ({ backgroundColor }) => {
+  // Accept backgroundColor prop
   const [clubs, setClubs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const navigate = useNavigate(); // Hook for navigating between routes
 
   useEffect(() => {
     const fetchClubs = async () => {
-      setLoading(true); // Set loading to true before fetching
+      setLoading(true);
       try {
         const response = await fetch(CLUBS_ENDPOINT);
-
         if (!response.ok) {
           throw new Error("Failed to fetch clubs");
         }
-
         const data = await response.json();
         setClubs(data.clubs);
       } catch (error) {
         setError(error.message);
       } finally {
-        setLoading(false); // Set loading to false after fetching
+        setLoading(false);
       }
     };
 
     fetchClubs();
-  }, []); // Empty dependency array ensures it only runs on initial render
+  }, []);
 
-  // Show the loading screen when loading or navigating away
   if (loading) {
-    return <div className="loading">Loading...</div>;
+    return (
+      <div className="loading" style={{ backgroundColor }}>
+        Loading...
+      </div>
+    ); // Apply backgroundColor dynamically
   }
 
   if (error) {

@@ -1,16 +1,6 @@
 /* Global styles */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap");
 
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-}
-
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-}
-
 :root {
   --main-text: #ffffff;
   --main-background: #0e2133;
@@ -25,13 +15,13 @@ body {
   background-color: var(--main-background);
   color: var(--main-text);
   margin: 0;
-  padding: 0px;
+  padding: 0;
   font-size: clamp(14px, 3vw, 18px);
   width: 100%;
   min-width: 320px;
-  margin: 0;
 }
 
+/* Header */
 header {
   background-color: var(--main-background);
   display: flex;
@@ -44,6 +34,7 @@ header {
   width: auto;
 }
 
+/* Navigation */
 ul {
   list-style-type: none;
   padding: 0;
@@ -51,12 +42,11 @@ ul {
   display: flex;
 }
 
-li {
+ul li {
   margin-right: 20px;
 }
 
 a {
-  font-family: "Poppins", sans-serif;
   font-size: 24px;
   color: var(--main-text);
   text-decoration: none;
@@ -67,9 +57,8 @@ a:hover {
   cursor: pointer;
 }
 
-h1,
-h2,
-h3 {
+/* Headings */
+h1, h2, h3 {
   text-align: center;
 }
 
@@ -87,34 +76,35 @@ h3 {
 
 /* Full-Screen Loading Text */
 .loading {
-  position: fixed; /* Fixed position to stay in the middle of the screen */
-  top: 0; /* Position at the top */
-  left: 0; /* Position at the left */
-  width: 100%; /* Make it take up the entire width */
-  height: 100%; /* Make it take up the entire height */
-  display: flex; /* Use flexbox for centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  font-size: 24px; /* Set font size for the loading text */
-  font-weight: bold; /* Make the text bold */
-  color: white; /* Set text color to white */
-  background-color: var(--main-background-light); /* Semi-transparent black background */
-  animation: fadeOut 2s ease-out forwards; /* Animation for fade-out effect */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--main-text);
+  background-color: var(--main-background);
+  animation: fadeOut 2s ease-out forwards;
 }
 
 /* Keyframes for the fade-out effect */
 @keyframes fadeOut {
   0% {
-    opacity: 1; /* Fully visible at the start */
+    opacity: 1;
   }
   90% {
-    opacity: 1; /* Keep fully visible until near the end */
+    opacity: 1;
   }
   100% {
-    opacity: 0; /* Fade out to 0 opacity at the end */
+    opacity: 0;
   }
 }
 
+/* About Text Styles */
 .about-text-container {
   padding: 16px;
 }
@@ -122,14 +112,13 @@ h3 {
 .about-text {
   background-color: var(--secondary-background);
   color: var(--secondary-text);
-  position: relative;
   border: 1px solid var(--main-text);
   border-radius: 12px;
   padding: 16px;
-  margin: auto; /* Centers horizontally */
+  margin: auto;
   max-width: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center; /* Optional if content should be centered */
+  text-align: center;
 }
