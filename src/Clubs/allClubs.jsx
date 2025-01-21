@@ -53,7 +53,7 @@ const AllClubs = () => {
 
   return (
     <div className="club-container">
-      <h1 className="title">All Clubs</h1>
+      <h1 className="title">All SATS Clubs in Norway</h1>
       <div className="club-list">
         {clubs.map((club) => (
           <div key={club.id} className="club-card">

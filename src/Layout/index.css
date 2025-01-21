@@ -1,20 +1,23 @@
+/* Global styles */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap");
 
-/* For Poppins font */
 .poppins-regular {
   font-family: "Poppins", sans-serif;
-  font-weight: 400; /* Regular */
+  font-weight: 400;
 }
 
 .poppins-bold {
   font-family: "Poppins", sans-serif;
-  font-weight: 700; /* Bold */
+  font-weight: 700;
 }
 
 :root {
   --main-text: #ffffff;
   --main-background: #0e2133;
-  --secondary-text: #fa5333;
+  --main-background-light: #0e213383;
+  --secondary-text: #0e2133;
+  --secondary-background: #ffffff;
+  --tertiary-color: #fa5333;
 }
 
 body {
@@ -23,13 +26,12 @@ body {
   color: var(--main-text);
   margin: 0;
   padding: 0px;
-  font-size: 1.5rem;
+  font-size: clamp(14px, 3vw, 18px);
   width: 100%;
   min-width: 320px;
   margin: 0;
 }
 
-/* Header */
 header {
   background-color: var(--main-background);
   display: flex;
@@ -71,10 +73,33 @@ h3 {
   text-align: center;
 }
 
+h1 {
+  font-size: 26px;
+}
+
 h2 {
   font-size: 24px;
 }
 
 h3 {
   font-size: 20px;
+}
+
+.about-text-container {
+  padding: 16px;
+}
+
+.about-text {
+  background-color: var(--secondary-background);
+  color: var(--secondary-text);
+  position: relative;
+  border: 1px solid var(--main-text);
+  border-radius: 12px;
+  padding: 16px;
+  margin: auto; /* Centers horizontally */
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center; /* Optional if content should be centered */
 }

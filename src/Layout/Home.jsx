@@ -1,11 +1,13 @@
 import React from "react";
-import "./App.css";
+import "./index.css";
+import AboutText from "./AboutText";
+import AllClubs from "../Clubs/allClubs";
 
 function Home() {
   return (
     <div>
-      <h1>SATS</h1>
-      <h2>Making people happier and healthier</h2>
+      <AboutText />
+      <AllClubs />
     </div>
   );
 }

@@ -1,26 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap");
-
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-}
-
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-}
-
-:root {
-  --main-text: #ffffff;
-  --main-background: #0e2133;
-  --main-background-light: #0e213383;
-  --secondary-text: #0e2133;
-  --secondary-background: #ffffff;
-  --tertiary-color: #fa5333;
-}
-
+/* Club overview styles */
 .club-container {
-  padding: 20px;
+  padding: 40px;
   font-family: Arial, sans-serif;
 }
 
@@ -32,32 +12,41 @@
 .club-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 30px;
 }
+
 .club-card {
   position: relative;
   border: 1px solid var(--main-text);
   border-radius: 12px;
   padding: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background: var(--secondary-background);
   color: var(--secondary-text);
   overflow: hidden;
-  transition: background 0.5s ease, color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: scale(1);
+  transition: background 0.5s ease, color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.club-name {
+  font-style: italic;
 }
 
 .club-card:hover {
-  background: var(--main-background-light);
-  color: var(--main-text);
-  box-shadow: 0 4px 8px var(--main-background);
+  color: var(--secondary-text);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2), 0px 4px 8px var(--main-background-light);
 }
 
 .club-card:hover .day {
-  color: var(--main-text);
+  color: var(--secondary-text);
 }
 
 .club-card:hover .hours {
-  color: var(--main-text);
+  color: var(--secondary-text);
 }
 
 .club-hours {
@@ -82,4 +71,8 @@
   text-align: right;
   font-style: italic;
   color: var(--secondary-text);
+}
+
+.club-visitor-load {
+  font-size: smaller;
 }
