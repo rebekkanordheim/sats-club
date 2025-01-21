@@ -12,23 +12,33 @@
   color: var(--main-text);
 }
 
+.map-and-cards {
+  display: flex;
+  flex-direction: column; /* Stack map and cards vertically */
+  gap: 20px; /* Space between the map and the cards */
+}
+
+.map-container {
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
+  margin: 0 auto;
+}
+
 .club-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  gap: 20px;
 }
 
 .club-card {
-  position: relative;
-  border: 1px solid var(--main-text);
-  border-radius: 12px;
-  padding: 16px;
-  background: var(--secondary-background);
+  background-color: var(--secondary-background);
   color: var(--secondary-text);
-  overflow: hidden;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--main-text);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background 0.5s ease, color 0.3s ease, transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: background 0.5s ease, transform 0.3s ease;
 }
 
 .club-card a {
