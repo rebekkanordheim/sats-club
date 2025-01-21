@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const API_BASE_URL = "/clubs-v2/sats";
-const CLUBS_ENDPOINT = `${API_BASE_URL}/clubs?country=Norway`;
+const API_BASE_URL = `/clubs-v2/sats/clubs?country=Norway`;
 
 const AllClubs = () => {
   const [clubs, setClubs] = useState([]);
@@ -12,7 +11,7 @@ const AllClubs = () => {
     const fetchClubs = async () => {
       setLoading(true);
       try {
-        const response = await fetch(CLUBS_ENDPOINT);
+        const response = await fetch(API_BASE_URL);
         if (!response.ok) {
           throw new Error("Failed to fetch clubs");
         }
