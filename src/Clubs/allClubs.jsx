@@ -11,16 +11,23 @@ const AllClubs = () => {
   useEffect(() => {
     const fetchClubs = async () => {
       try {
-        const response = await fetch(
-          "https://hfnapi.sats.com/clubs-v2/sats/clubs?counrty=Norway"
-        );
+        const response = await fetch("/clubs-v2/sats/clubs?country=Norway");
+
+        // Log response to inspect what's returned
+        const text = await response.text(); // Get response as text
+        console.log("Response text:", text); // This will show the raw response
+
+        // Check if the response is JSON
         if (!response.ok) {
           throw new Error("Failed to fetch clubs");
         }
-        const data = await response.json();
+
+        // If the response is JSON, parse it
+        const data = JSON.parse(text); // Manually parse the response
         setClubs(data.clubs);
         setLoading(false);
       } catch (error) {
+        console.error("Error:", error); // Log the error for debugging
         setError(error.message);
         setLoading(false);
       }
@@ -28,6 +35,7 @@ const AllClubs = () => {
 
     fetchClubs();
   }, []);
+
   if (loading) {
     return <div>Loading...</div>;
   }
