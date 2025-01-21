@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for routing
 
 const API_BASE_URL = "/clubs-v2/sats";
 const CLUBS_ENDPOINT = `${API_BASE_URL}/clubs?country=Norway`;
@@ -7,9 +8,11 @@ const AllClubs = () => {
   const [clubs, setClubs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate(); // Hook for navigating between routes
 
   useEffect(() => {
     const fetchClubs = async () => {
+      setLoading(true); // Set loading to true before fetching
       try {
         const response = await fetch(CLUBS_ENDPOINT);
 
@@ -22,27 +25,14 @@ const AllClubs = () => {
       } catch (error) {
         setError(error.message);
       } finally {
-        setLoading(false);
+        setLoading(false); // Set loading to false after fetching
       }
     };
 
     fetchClubs();
-  }, []);
+  }, []); // Empty dependency array ensures it only runs on initial render
 
-  const renderOpeningHours = (openingHours) => {
-    if (!openingHours?.regularOpeningHours?.[0]?.days) {
-      return "No opening hours available";
-    }
-    return openingHours.regularOpeningHours[0].days.map((day) => (
-      <span key={day.day} className="club-day">
-        {day.day}: {day.timeSpans[0]?.opens?.hour}:
-        {day.timeSpans[0]?.opens?.minute.toString().padStart(2, "0")} -{" "}
-        {day.timeSpans[0]?.closes?.hour}:
-        {day.timeSpans[0]?.closes?.minute.toString().padStart(2, "0")}
-      </span>
-    ));
-  };
-
+  // Show the loading screen when loading or navigating away
   if (loading) {
     return <div className="loading">Loading...</div>;
   }

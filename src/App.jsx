@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cluboverview" element={<ClubOverview />} />{" "}
+        <Route path="/cluboverview" element={<ClubOverview />} />
       </Routes>
     </Router>
   );

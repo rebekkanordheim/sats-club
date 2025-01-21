@@ -7,6 +7,9 @@
 .title {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--main-text);
 }
 
 .club-list {
@@ -24,29 +27,36 @@
   color: var(--secondary-text);
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transform: scale(1);
-  transition: background 0.5s ease, color 0.3s ease, transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: background 0.5s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.club-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .club-name {
   font-style: italic;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .club-card:hover {
   color: var(--secondary-text);
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform: scale(1.05);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2), 0px 4px 8px var(--main-background-light);
 }
 
-.club-card:hover .day {
-  color: var(--secondary-text);
+.club-card:hover .day,
+.club-card:hover .hours {
+  color: var(--secondary-color);
 }
 
-.club-card:hover .hours {
-  color: var(--secondary-text);
+.club-card:hover .club-name {
+  color: var(--secondary-color);
 }
 
 .club-hours {
@@ -75,4 +85,21 @@
 
 .club-visitor-load {
   font-size: smaller;
+  margin-top: 10px;
+  color: var(--secondary-text);
+}
+
+.club-address {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: var(--secondary-text);
+}
+
+.club-card a:hover {
+  text-decoration: none;
+}
+
+.club-card .club-name,
+.club-card .club-address {
+  transition: color 0.3s ease;
 }
