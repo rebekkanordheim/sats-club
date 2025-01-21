@@ -1,11 +1,12 @@
 import React from "react";
 import AllClubs from "./allClubs";
+import "./index.css";
 
 function ClubOverview() {
   return (
     <div>
-      <h1>Club Overview</h1>
-      <h2>This page will display an overview of all clubs.</h2>
+      {/* <h1>Club Overview</h1>
+      <h2>This page will display an overview of all clubs.</h2> */}
       <AllClubs />
     </div>
   );
