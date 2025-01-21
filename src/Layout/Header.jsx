@@ -14,10 +14,10 @@ function Header() {
       <nav>
         <ul className="nav-links">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Hjem</Link>
           </li>
           <li>
-            <Link to="/cluboverview">Club Overview</Link>
+            <Link to="/cluboverview">Senteroversikt</Link>
           </li>
         </ul>
       </nav>

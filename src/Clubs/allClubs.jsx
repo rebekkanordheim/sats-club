@@ -28,7 +28,7 @@ const AllClubs = () => {
   }, []);
 
   if (loading) {
-    return <div className="loading">Loading...</div>;
+    return <div className="loading">Laster...</div>;
   }
 
   if (error) {
@@ -37,7 +37,7 @@ const AllClubs = () => {
 
   return (
     <div className="club-container">
-      <h1 className="title">All SATS Clubs in Norway</h1>
+      <h1 className="title">Alle SATS sentre i Norge</h1>
       <div className="club-list">
         {clubs.map((club) => (
           <div key={club.id} className="club-card">
